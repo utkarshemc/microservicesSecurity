@@ -1,0 +1,30 @@
+<header>
+    <nav class ="navbar navbar-expand-md navbar-dark bg-dark">
+    <div><a href="https://www.delltechnologies.com/en-in/index.htm" class="navbar-brand">Dell Technologies</a></div>
+    
+    <ul class="navbar-nav">
+
+    <li><a *ngIf="isAuthenticated" routerLink="/users" class="nav-link">View Users</a></li> 
+    <li><a *ngIf="isAuthenticated" routerLink="/addpayment" class="nav-link">Create Payment</a></li> 
+    <li><a *ngIf="isAuthenticated" routerLink="/payments" class="nav-link">View All Payments</a></li>
+    <li><a *ngIf="!isAuthenticated" (click)="oktaAuth.loginRedirect()" class="nav-link">Login</a></li>
+    <!-- <li><a *ngIf="!isAuthenticated" routerLink="/login" class="nav-link">Login</a></li> -->
+    <!-- <li><a  *ngIf="!isAuthenticated"  class="nav-link" href="https://dev-512109.okta.com/oauth2/v1/authorize?idp=0oalg98fl1KbG2sZF4x6&client_id=0oakjotfruiFbl2er4x6&response_type=id_token&response_mode=fragment&scope=openid&redirect_uri=http://localhost:4200/payments&state=WM6D&nonce=YsG76j">Sign in with Google</a> -->
+    <li><a *ngIf="isAuthenticated" (click)="logout()" class="nav-link">LogOut</a></li>
+    
+    </ul>
+
+    <!-- <button   *ngIf="!isAuthenticated" class="loginBtn loginBtn--google" href="https://dev-512109.okta.com/oauth2/v1/authorize?idp=0oalg98fl1KbG2sZF4x6&client_id=0oakjotfruiFbl2er4x6&response_type=id_token&response_mode=fragment&scope=openid&redirect_uri=http://localhost:4200/payments&state=WM6D&nonce=YsG76j">
+        Login with Google
+      </button> -->
+
+      <button  *ngIf="!isAuthenticated" class="loginBtn loginBtn--google" onclick="location.href='https://dev-512109.okta.com/oauth2/v1/authorize?idp=0oalg98fl1KbG2sZF4x6&client_id=0oakjotfruiFbl2er4x6&response_type=id_token&response_mode=fragment&scope=openid&redirect_uri=http://localhost:4200/payments&state=WM6D&nonce=YsG76j'" type="button">
+       Login with Google</button>
+
+    
+    
+    <!-- <div *ngIf="loginService.isUserLoggedIn()" class="currentUser">Hello, {{currentUser}}</div> -->
+    
+    </nav>
+    
+    </header>

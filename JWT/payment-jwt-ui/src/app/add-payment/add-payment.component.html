@@ -1,0 +1,11 @@
+ <alert></alert>
+ <div class="login-page">
+      <div class="form">
+        <h3>Create New Payment</h3> 
+            <label for="amount">Amount(in $)</label>
+            <input [(ngModel)]="pay.amount" placeholder="Amount" name="amount" id="amount">
+            <label for="method">Payment Method</label>
+            <input [(ngModel)]="pay.method" placeholder="Payment Method" name="method" id="method">
+          <button class="btn btn-success" (click)="createPayment()">Enter</button>
+      </div>
+    </div>

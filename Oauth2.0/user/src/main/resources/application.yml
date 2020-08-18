@@ -1,0 +1,9 @@
+security:
+  oauth2:
+    client:
+      clientId: DellTechnologyAuthServer
+      clientSecret: Dellemc
+      accessTokenUri: http://localhost:9091/oauth/token
+      userAuthorizationUri: http://localhost:9091/oauth/authorize
+    resource:
+      userInfoUri: http://localhost:9091/auth/validateUser

@@ -1,0 +1,19 @@
+<header>
+    <nav class ="navbar navbar-expand-md navbar-dark bg-dark">
+    <div><a href="https://www.delltechnologies.com/en-in/index.htm" class="navbar-brand">Dell Technologies</a></div>
+    
+    <ul class="navbar-nav">
+
+    <li><a *ngIf="loginService.isUserLoggedIn() && loginService.isAdmin()" routerLink="/users" class="nav-link">View Users</a></li>
+    <li><a *ngIf="loginService.isUserLoggedIn() && !loginService.isAdmin()" routerLink="/addpayment" class="nav-link">Create Payment</a></li>
+    <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/payments" class="nav-link">View All Payments</a></li>
+    <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
+    <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">LogOut</a></li>
+    
+    </ul>
+    
+    <div *ngIf="loginService.isUserLoggedIn()" class="currentUser">Hello, {{currentUser}}</div>
+    
+    </nav>
+    
+    </header>
